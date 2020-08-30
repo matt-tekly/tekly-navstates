@@ -1,0 +1,17 @@
+{
+    "name": "Tekly.NavStates.Editor",
+    "references": [
+        "GUID:4c56ca3fff1a7224f8594a84d16979c5"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
