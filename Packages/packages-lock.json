@@ -7,17 +7,26 @@
       "dependencies": {},
       "url": "https://registry.npmjs.org"
     },
+    "ca.tekly.logger": {
+      "version": "0.0.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "ca.tekly.utility": "0.0.1"
+      },
+      "url": "https://registry.npmjs.org"
+    },
     "ca.tekly.navstates": {
       "version": "file:NavStates",
       "depth": 0,
       "source": "embedded",
       "dependencies": {
-        "ca.tekly.tklogger": "0.0.1"
+        "ca.tekly.logger": "0.0.2"
       }
     },
-    "ca.tekly.tklogger": {
-      "version": "0.0.2",
-      "depth": 0,
+    "ca.tekly.utility": {
+      "version": "0.0.1",
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://registry.npmjs.org"

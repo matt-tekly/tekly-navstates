@@ -5,10 +5,10 @@ namespace Tekly.NavStates
     public class NavStateContext
     {
         public readonly NavStateManager Manager;
-        public readonly ITkLogger Logger;
+        public readonly TkLogger Logger;
         private readonly bool m_enableDebugLogging;
 
-        public NavStateContext(NavStateManager manager, ITkLogger logger, bool enableDebugLogging)
+        public NavStateContext(NavStateManager manager, TkLogger logger, bool enableDebugLogging)
         {
             Manager = manager;
             Logger = logger;

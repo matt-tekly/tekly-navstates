@@ -55,7 +55,7 @@ namespace Tekly.NavStates
 
 		protected virtual NavStateContext CreateContext(NavStateManager manager)
 		{
-			return new NavStateContext(manager, TkLogger.GetLogger<NavState>(), EnableDebugLogging);
+			return new NavStateContext(manager, TkLogger.Get<NavState>(), EnableDebugLogging);
 		}
 	}
 }
