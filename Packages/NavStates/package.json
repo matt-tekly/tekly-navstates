@@ -1,6 +1,6 @@
 {
   "name": "ca.tekly.navstates",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "displayName": "Tekly Nav States",
   "description": "Hierarchical states defined in a GameObject hierarchy",
   "author": {
@@ -8,6 +8,6 @@
     "email": "matt@tekly.ca"
   },
   "dependencies": {
-    "ca.tekly.tklogger": "0.0.1"
+    "ca.tekly.logger": "0.0.1"
   }
 }
