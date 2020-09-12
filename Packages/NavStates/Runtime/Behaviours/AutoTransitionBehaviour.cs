@@ -1,4 +1,6 @@
-﻿namespace Tekly.NavStates.Behaviours
+﻿using Tekly.Logging;
+
+namespace Tekly.NavStates.Behaviours
 {
 	/// <summary>
 	/// Perform the given Transition once the state is active for a period of time
@@ -9,6 +11,8 @@
         public float SecondsToWait;
 
         private float m_waitTimer;
+        
+        private readonly TkLogger m_logger = TkLogger.Get<AutoTransitionBehaviour>();
         
         public override void OnStateEnter()
         {
@@ -40,7 +44,7 @@
 		        return true;
 	        }
 
-	        m_context.Logger.ErrorContext("AutoTransitionBehaviour has empty Transition", this);
+	        m_logger.ErrorContext("AutoTransitionBehaviour has empty Transition", this);
 	        return false;
         }
     }

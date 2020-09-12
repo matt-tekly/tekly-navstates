@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Tekly.Logging;
 
 namespace Tekly.NavStates
 {
@@ -11,6 +12,7 @@ namespace Tekly.NavStates
 		public NavStateContext Context { get; private set; }
 		
 		private NavStateMachine m_root;
+		private readonly TkLogger m_logger = TkLogger.Get<NavStateManager>();
 
 		public void Initialize(NavStateMachine rootStateMachine, NavStateContext context)
 		{
@@ -35,7 +37,7 @@ namespace Tekly.NavStates
 			if (Navigator.TryGetStateForTransition(transition, ref targetState)){
 				TransitionTo(targetState);
 			} else {
-				Context.Logger.Error($"Failed to find transition: {transition} [{Active.Path}]");
+				m_logger.Error($"Failed to find transition: {transition} [{Active.Path}]");
 			}
 		}
 		

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Tekly.Logging;
 using UnityEngine;
 
 namespace Tekly.NavStates
@@ -38,6 +39,8 @@ namespace Tekly.NavStates
 		
 		private NavBehaviour[] m_behaviours;
 		private StateMode m_mode;
+		
+		private readonly TkLogger m_logger = TkLogger.Get<NavState>();
 
 		/// <summary>
 		/// Called by the manager when the state machine hierarchy is navigating
@@ -101,7 +104,7 @@ namespace Tekly.NavStates
 					Mode = StateMode.Active;
 					return true;
 				default:
-					m_context.Logger.Warning($"IsDoneLoading() was called while not in the loading mode. State: {Name}");
+					m_logger.WarningContext($"IsDoneLoading() was called while not in the loading mode. State: [{Path}]", this);
 					return false;
 			}
 		}

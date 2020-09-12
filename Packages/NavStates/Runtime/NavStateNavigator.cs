@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using System.Diagnostics;
+using Tekly.Logging;
 
 namespace Tekly.NavStates
 {
@@ -19,6 +19,7 @@ namespace Tekly.NavStates
 		private readonly List<NavStateMachine> m_parentsScratch = new List<NavStateMachine>();
 
 		private NavStateContext m_context;
+		private readonly TkLogger m_logger = TkLogger.Get<NavStateNavigator>();
 		
 		public void Initialize(NavStateContext context, NavStateMachine rootStateMachine)
 		{
@@ -68,7 +69,7 @@ namespace Tekly.NavStates
 					}
 					break;
 				default:
-					m_context.Logger.Error($"CurrentState.Mode out of range: {(int)CurrentState.Mode}");
+					m_logger.Error($"CurrentState.Mode out of range: {(int)CurrentState.Mode}");
 					break;
 			}
 		}
@@ -143,7 +144,7 @@ namespace Tekly.NavStates
 			while (destinationStateMachine != null) {
 				var defaultChild = destinationStateMachine.DefaultState;
 				if (defaultChild == null) {
-					m_context.Logger.Error($"Failed to navigate to next state. {destinationStateMachine.Path} is missing the default state");
+					m_logger.Error($"Failed to navigate to next state. {destinationStateMachine.Path} is missing the default state");
 					return false;
 				}
 

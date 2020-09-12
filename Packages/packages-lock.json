@@ -8,7 +8,7 @@
       "url": "https://registry.npmjs.org"
     },
     "ca.tekly.logger": {
-      "version": "0.0.2",
+      "version": "0.0.3",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -21,7 +21,7 @@
       "depth": 0,
       "source": "embedded",
       "dependencies": {
-        "ca.tekly.logger": "0.0.2"
+        "ca.tekly.logger": "0.0.3"
       }
     },
     "ca.tekly.utility": {

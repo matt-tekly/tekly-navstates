@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Tekly.Logging;
 using UnityEngine;
 
 namespace Tekly.NavStates
@@ -14,7 +13,7 @@ namespace Tekly.NavStates
 		public NavStateMachine NavStateMachine;
 		public NavStateManager Manager;
 		public bool EnableDebugLogging;
-
+		
 		private static readonly List<NavStateSpace> s_spaces = new List<NavStateSpace>();
 
 		public static NavStateSpace Get(string name)
@@ -55,7 +54,7 @@ namespace Tekly.NavStates
 
 		protected virtual NavStateContext CreateContext(NavStateManager manager)
 		{
-			return new NavStateContext(manager, TkLogger.Get<NavState>(), EnableDebugLogging);
+			return new NavStateContext(manager, EnableDebugLogging);
 		}
 	}
 }
