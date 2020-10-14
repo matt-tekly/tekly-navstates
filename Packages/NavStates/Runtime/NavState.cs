@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Tekly.Logging;
 using UnityEngine;
 
@@ -52,7 +53,7 @@ namespace Tekly.NavStates
 
 			Path = NavStateUtils.CalculatePath(this);
 
-			m_behaviours = GetComponents<NavBehaviour>();
+			m_behaviours = GetComponents<NavBehaviour>().Where(v => v.enabled).ToArray();
 			
 			foreach (var beh in m_behaviours) {
 				beh.Initialize(context, this);
